@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}เกี่ยวกับเรา | Game Station{% endblock %}
+
+{% block content %}
+
+<div class="hero-about d-flex align-items-center justify-content-center text-white text-center rounded"
+     style="height: 300px; 
+            background:url('https://www.shutterstock.com/image-vector/red-neon-tunnel-glowing-light-260nw-2645576979.jpg') center/cover;">
+    <h2 class="fw-semibold px-4 py-2 rounded" style="background: rgba(10, 10, 10, 0.8);">
+        Welcome to Game Station
+    </h2>
+</div>
+
+<div class="container mt-5">
+
+    <h4 class="text-center mb-4 fw-bold" style="color:#FFFFFF;">
+        ภาพบรรยากาศร้านและสินค้าของเรา
+    </h4>
+
+    <div class="row g-3 mb-5">
+
+        <div class="col-md-4">
+            <img src=https://s.isanook.com/ga/0/ud/218/1093081/image-stardew-07.jpg?ip/resize/w728/q80/jpg
+                 class="img-fluid gallery-img active-hover" alt="Custom Xbox Controller">
+        </div>
+
+        <div class="col-md-4">
+            <img src=https://thisisgamethailand.com/wp-content/uploads/2025/09/main.jpg
+                 class="img-fluid gallery-img" alt="Red Nintendo Switch">
+        </div>
+
+        <div class="col-md-4">
+            <img src=https://thisisgamethailand.com/wp-content/uploads/2025/09/Genshin-Impact_main.jpg 
+                 class="img-fluid gallery-img" alt="Custom Arcade Stick">
+        </div>
+
+        <div class="col-md-4">
+            <img src=https://thisisgamethailand.com/wp-content/uploads/slider/cache/c6ac2de512303e7017bf9405de54084d/MONGIL-STAR-DIVE-main-feature.jpg 
+                 class="img-fluid gallery-img" alt="Collector Game Boxes">
+        </div>
+
+        <div class="col-md-4">
+            <img src=https://s.isanook.com/ga/0/ud/234/1173922/horizon-dlc-pre-order-cover.jpg?ip/crop/w375h225/q80/jpg
+                 class="img-fluid gallery-img" alt="Custom Gaming PC">
+        </div>
+
+        <div class="col-md-4">
+            <img src=https://www.mustplay.in.th/static/thumb/2026/0/28/attach-1769582696162.jpg 
+                 class="img-fluid gallery-img" alt="Player Gameplay">
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+/* Override the light background from base.html for this page */
+body {
+    background-color: #0A0A0A; /* ดำเข้มเกือบสนิท */
+}
+
+/* Custom styles for About page only */
+.hero-about {
+    box-shadow: 0 4px 15px rgba(210,0,0,0.3);
+}
+
+.gallery-img {
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    width: 100%;
+    height: 250px; /* บังคับความสูงเพื่อให้รูปเรียงสวยงาม */
+    object-fit: cover; /* จัดการไม่ให้รูปยืดหรือเบี้ยว */
+}
+
+.gallery-img:hover,
+.gallery-img.active-hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(210, 0, 0, 0.5); /* เพิ่มแสงเงาสีแดงตอนเอาเมาส์ชี้ */
+}
+
+</style>
+
+{% endblock %}

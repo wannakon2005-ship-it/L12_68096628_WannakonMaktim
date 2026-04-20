@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}พรีออเดอร์แผ่นเกมส์ | Game Station{% endblock %}
+
+{% block content %}
+
+<div class="hero-section text-center d-flex align-items-center justify-content-center rounded">
+    <h2 class="fw-bold text-white px-4 py-2 rounded" style="background: rgba(10, 10, 10, 0.8); border: 1px solid #D20000;">
+        PRE-ORDER NOW
+    </h2>
+</div>
+
+<div class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-5">
+        <div class="card custom-card">
+
+            <div class="card-header text-center">
+                แบบฟอร์มแก้ไขข้อมูลประชากร
+            </div>
+
+            <div class="card-body">
+                <form method="POST">  
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label text-white">ชื่อประชากร</label>
+                        <input type="text" class="form-control custom-input" name="name" value="{{ record.name }}" placeholder="กรุณากรอกชื่อ-นามสกุล">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="age" class="form-label text-white">อายุ</label>
+                        <input type="number" class="form-control custom-input" name="age" value="{{ record.age }}" placeholder="กรอกข้อมูลอายุเป็นตัวเลข">
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn custom-btn">
+                            อัปเดตข้อมูล
+                        </button>
+
+                        <button type="reset" class="btn btn-cancel">
+                            ล้างข้อมูล
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+.hero-section {
+    height: 300px;
+    /* ไล่สีโทนดำ-แดง ทับรูปภาพเดิมให้ดูเข้มขึ้น */
+    background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(210, 0, 0, 0.4)),
+                url('https://www.shutterstock.com/image-vector/red-neon-tunnel-glowing-light-260nw-2645576979.jpg') center/cover;
+    box-shadow: 0 4px 15px rgba(210,0,0,0.2);
+}
+
+.custom-card {
+    background-color: #121212; /* พื้นหลังการ์ดสีดำเทา */
+    border: 1px solid #333333;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(210, 0, 0, 0.15); /* เงาสีแดงอ่อนๆ */
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #D20000; /* เฮดเดอร์สีแดง */
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 15px; /* แก้ไข a ที่เกินมาตรงนี้ */
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-bottom: none;
+}
+
+.custom-input {
+    background-color: #1A1A1A; /* พื้นหลังช่องกรอกสีดำ */
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #444444;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.custom-input::placeholder {
+    color: #888888;
+}
+
+.custom-input:focus {
+    background-color: #222222;
+    color: #FFFFFF;
+    border-color: #D20000; /* ขอบแดงตอนกดพิมพ์ */
+    box-shadow: 0 0 10px rgba(210, 0, 0, 0.3);
+}
+
+/* ปรับสีตัวเลือก Dropdown ให้เป็นสีดำ */
+select.custom-input option {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+}
+
+.custom-btn {
+    background-color: #D20000;
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.custom-btn:hover {
+    background-color: #FF0000;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5); /* เรืองแสงสีแดง */
+}
+
+.btn-cancel {
+    background-color: transparent;
+    color: #AAAAAA;
+    border: 1px solid #555555;
+    border-radius: 10px;
+    padding: 12px;
+    transition: 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #333333;
+    color: #FFFFFF;
+    border-color: #888888;
+}
+
+</style>
+{% endblock %}
